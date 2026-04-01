@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Marks Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f0f4f8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            width: 300px;
+            text-align: center;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+        }
+
+        input {
+            width: 90%;
+            padding: 8px;
+            margin: 8px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            margin-top: 15px;
+            padding: 10px 15px;
+            border: none;
+            background: #007BFF;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #0056b3;
+        }
+
+        .result {
+            margin-top: 15px;
+            font-weight: bold;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Marks Calculator</h2>
+
+    <input type="number" id="sub1" placeholder="Enter Subject 1 Marks">
+    <input type="number" id="sub2" placeholder="Enter Subject 2 Marks">
+    <input type="number" id="sub3" placeholder="Enter Subject 3 Marks">
+
+    <button onclick="calculateMarks()">Calculate</button>
+
+    <div class="result" id="result"></div>
+</div>
+
+<script>
+    function calculateMarks() {
+        let m1 = parseFloat(document.getElementById("sub1").value) || 0;
+        let m2 = parseFloat(document.getElementById("sub2").value) || 0;
+        let m3 = parseFloat(document.getElementById("sub3").value) || 0;
+
+        let total = m1 + m2 + m3;
+        let average = total / 3;
+
+        document.getElementById("result").innerHTML =
+            "Total Marks: " + total + "<br>Average Marks: " + average.toFixed(2);
+    }
+</script>
+
+</body>
+</html>
